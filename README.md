@@ -16,6 +16,10 @@ project-root/
 │ ├── grpcWeb.go
 │ ├── grpcWeb.ini
 │ └── ...
+├── goWebRequest/ # goWeb 테스트용 python
+│ ├── register.py
+│ ├── login.py
+│ └── ...
 ├── common/ # 공통 라이브러리
 │ ├── config.go
 │ ├── log.go
@@ -30,7 +34,15 @@ project-root/
 
 
 # 사전작업
-### 1. Golang 설치
+
+### 1. 테스트 환경
+os : AWS EC2 Ubuntu 22.04
+go : 1.23.10
+Python : 3.10.12
+mysql : latest
+redis : latest
+
+### 2. Golang 설치
 
 ```bash
 wget https://go.dev/dl/go1.23.10.linux-amd64.tar.gz
@@ -43,7 +55,7 @@ source ~/.bashrc
 go version
 ```
 
-### 2. Docker 설치
+### 3. Docker 설치
 ```
 # 필수 패키지 설치
 sudo apt-get update
@@ -70,7 +82,7 @@ sudo usermod -aG docker $USER
 newgrp docker
 ```
 
-### 3. MySQL 설치
+### 4. MySQL 설치
 ``` bash
 docker run --name my-mysql \
   -e MYSQL_ROOT_PASSWORD=password123 \
@@ -93,7 +105,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 ```
 
-### 4. Redis 설치
+### 5. Redis 설치
 ``` bash
 docker run -d --name my_redis -p 6379:6379 redis
 ```
