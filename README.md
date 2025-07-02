@@ -35,6 +35,7 @@ project-root/
 
 # 사전작업
 ```markdown
+## 테스트 환경
 os : AWS EC2 Ubuntu 22.04
 go : 1.23.10
 Python : 3.10.12
