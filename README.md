@@ -2,8 +2,8 @@
 
 Go & gRPC 를 활용한 RestAPI WebServer 기본 구조 구축 소스파일
  - RestAPI 요청을 받아 gRPC 서버에 등록된 함수를 호출
- - MySQL, MsSQL, Oracle, Redis 기능 구현
- - 환경파일(goWeb.ini, grpcWeb.ini)을 활용한 데이터베이스 Destination 설정
+ - MySQL, MsSQL, Oracle, Redis 기능 구현 (테스트 환경으로 Oracle 제외상태)
+ - 환경파일(grpcWeb.ini)을 활용한 데이터베이스 Destination 설정
 
 ```markdown
 ## 디렉토리 구조
@@ -32,10 +32,8 @@ project-root/
 ./grpcWeb/grpcWeb -f ./grpcWeb/grpcWeb.ini
 ```
 
-
-# 사전작업
-```markdown
 ## 테스트 환경
+```markdown
 os : AWS EC2 Ubuntu 22.04
 go : 1.23.10
 Python : 3.10.12
@@ -43,8 +41,9 @@ mysql : latest
 redis : latest
 ```
 
-### 1. Golang 설치
 
+# 사전작업
+### 1. Golang 설치
 ```bash
 wget https://go.dev/dl/go1.23.10.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go
